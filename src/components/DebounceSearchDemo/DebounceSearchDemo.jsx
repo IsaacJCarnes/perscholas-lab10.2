@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import useDebounce from "../../hooks/useDebounce";
-import { useEffect } from "react";
 
 function DebounceSearchDemo() {
   const [debounceTime, setDebounceTime] = useState(500);
@@ -19,11 +18,12 @@ function DebounceSearchDemo() {
   }
 
   return (
-    <div className="exampleSection">
-      <h3>Debounce Search Demo</h3>
-      <div>
+    <div className="exampleSection" id="DebounceSection">
+      <h3 className="sectionHeader align-center">Debounce Search Demo</h3>
+      <div className="fill-x">
         <label htmlFor="delay">Debounce Delay (ms): </label>
         <input
+          name="delay"
           value={debounceTime}
           type="number"
           step={500}
@@ -47,7 +47,7 @@ function DebounceSearchDemo() {
         <b>Debounced Value (after {debounceTime}ms):</b> {debouncedValue}
       </div>
       {loading ? <div>Searching...</div> : <div>Simulated Search Results:</div>}
-      {value ? (
+      {debouncedValue ? (
         <ul>{createSimulatedResults()}</ul>
       ) : (
         <div>Type to see results.</div>

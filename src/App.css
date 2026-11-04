@@ -4,20 +4,20 @@
   border-radius: 20px;
   padding: 10px;
   color: black;
-  width: 100%;
+  width: inherit;
   display: flex;
   flex-direction: column;
   align-items: first baseline;
 }
 
-.exampleSection > * {
+/* Selector with no specificity*/
+:where(.exampleSection > *) {
   position: relative;
-  width: calc(100% - 10px);
   text-align: left;
   font-size: small;
 }
 
-.exampleSection>h3{
-    text-align: center;
-    font-size: large;
+.sectionHeader {
+  text-align: center;
+  font-size: large;
 }

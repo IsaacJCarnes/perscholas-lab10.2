@@ -1,4 +1,10 @@
 /* Target the container wrapper provided by the browser */
+details{
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+
 .animated-details::details-content {
   block-size: 0;
   opacity: 0;
