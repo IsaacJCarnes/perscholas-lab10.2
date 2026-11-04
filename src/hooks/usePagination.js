@@ -4,5 +4,4 @@ export default function usePagination({
   totalItems,
   itemsPerPage,
   initialPage,
-}) {
-}
+}) {}
