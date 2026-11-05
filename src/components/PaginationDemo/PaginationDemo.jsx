@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./PaginationDemo.css";
 import usePagination from "../../hooks/usePagination";
 
 const exampleArray = Array.from({ length: 105 }, (_, index) => index + 1);
@@ -23,8 +24,11 @@ function PaginationDemo() {
     return slicedItems.map((value, index) => <li key={index}>Item {value}</li>);
   }
   function createPaginationButtons() {
-    return Array(totalPages).map((value, index) => (
-      <button key={index}>{index}</button>
+    const newArray = new Array(totalPages).fill(0);
+    return newArray.map((value, index) => (
+      <button disabled={currentPage === index} onClick={() => setPage(index)}>
+        {index + 1}
+      </button>
     ));
   }
 
@@ -76,7 +80,9 @@ function PaginationDemo() {
         Showing items {startIndex + 1} - {endIndex} (Total on this page:{" "}
         {itemsOnCurrentPage})
       </div>
-      <div>{createPaginationButtons()}</div>
+      <div className="flx-between fill-x" id="PageButtons">
+        {createPaginationButtons()}
+      </div>
     </div>
   );
 }

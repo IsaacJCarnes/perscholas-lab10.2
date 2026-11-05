@@ -1,0 +1,18 @@
+#PageButtons button {
+  background-color: var(--bg);
+  border-radius: 5px;
+  width: 1.8em;
+  height: 2.1em;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  border: unset;
+}
+
+#PageButtons button[disabled] {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  width: 1.8em;
+  height: 2.1em;
+}

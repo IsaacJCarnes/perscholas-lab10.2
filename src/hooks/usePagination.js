@@ -17,7 +17,7 @@ export default function usePagination(totalItems, itemsPerPage, initialPage) {
   }, [itemsPerPage, initialPage]);
 
   function setPage(page) {
-    if (0 < page && page < totalPages) {
+    if (-1 < page && page < totalPages) {
       setCurrentPage(page);
     } else {
       console.error(
