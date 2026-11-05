@@ -8,7 +8,7 @@ function App() {
       <Details summary="Pagination" open>
         <PaginationDemo />
       </Details>
-      <Details summary="Debounce Search">
+      <Details summary="Debounce Search" open>
         <DebounceSearchDemo />
       </Details>
     </>
