@@ -19,7 +19,7 @@ function DebounceSearchDemo() {
 
   return (
     <div className="exampleSection" id="DebounceSection">
-      <h3 className="sectionHeader align-center">Debounce Search Demo</h3>
+      <h3 className="sectionHeader self-ac">Debounce Search Demo</h3>
       <div className="fill-x">
         <label htmlFor="delay">Debounce Delay (ms): </label>
         <input
@@ -39,6 +39,8 @@ function DebounceSearchDemo() {
         onChange={(e) => {
           setValue(e.target.value);
         }}
+        className="fill-x p"
+        style={{"--m-r": "10px", "--p": "0px"}}
       />
       <div>
         <b>Current Input:</b> {value}

@@ -22,7 +22,7 @@ function PaginationDemo() {
   function createPaginationButtons() {}
   return (
     <div className="exampleSection">
-      <h3 className="sectionHeader align-center">Pagination Demo</h3>
+      <h3 className="sectionHeader self-ac">Pagination Demo</h3>
       <div className="flx-between fill-x">
         <div>
           <label htmlFor="numItems" className="txt-sm2">
@@ -61,14 +61,14 @@ function PaginationDemo() {
           of {totalPages || 1}
         </div>
         <button
-          className="txt-sm2 justify-end"
+          className="txt-sm2"
           disabled={!canNextPage}
           onClick={nextPage}
         >
           Next
         </button>
       </div>
-      <div className="txt-sm3 align-center txt-center">
+      <div className="txt-sm3 self-ac txt-center">
         Showing items {startIndex + 1} - {endIndex} (Total on this page:{" "}
         {itemsOnCurrentPage})
       </div>
