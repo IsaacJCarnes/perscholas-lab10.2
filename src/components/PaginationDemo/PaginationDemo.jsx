@@ -1,7 +1,7 @@
 import { useState } from "react";
 import usePagination from "../../hooks/usePagination";
 
-const exampleArray = Array.from({ length: 105 }, (_, index) => index);
+const exampleArray = Array.from({ length: 105 }, (_, index) => index + 1);
 
 function PaginationDemo() {
   const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -18,8 +18,16 @@ function PaginationDemo() {
     canPrevPage,
   } = usePagination(exampleArray.length, itemsPerPage, 0);
 
-  function createPaginationResults() {}
-  function createPaginationButtons() {}
+  function createPaginationResults() {
+    const slicedItems = exampleArray.slice(startIndex, endIndex);
+    return slicedItems.map((value, index) => <li key={index}>Item {value}</li>);
+  }
+  function createPaginationButtons() {
+    return Array(totalPages).map((value, index) => (
+      <button key={index}>{index}</button>
+    ));
+  }
+
   return (
     <div className="exampleSection">
       <h3 className="sectionHeader self-ac">Pagination Demo</h3>
@@ -35,7 +43,7 @@ function PaginationDemo() {
             min={5}
             max={50}
             onChange={(e) => {
-              setItemsPerPage(e.target.value);
+              setItemsPerPage(Number(e.target.value));
             }}
             className="txt-sm2"
           />
@@ -53,18 +61,14 @@ function PaginationDemo() {
             className="txt-sm2"
             type="number"
             step={1}
-            onChange={(e) => setPage(e.target.value - 1)}
+            onChange={(e) => setPage(Number(e.target.value))}
             max={totalPages}
             min={1}
             value={currentPage + 1}
           />{" "}
           of {totalPages || 1}
         </div>
-        <button
-          className="txt-sm2"
-          disabled={!canNextPage}
-          onClick={nextPage}
-        >
+        <button className="txt-sm2" disabled={!canNextPage} onClick={nextPage}>
           Next
         </button>
       </div>
